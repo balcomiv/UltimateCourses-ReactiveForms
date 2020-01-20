@@ -14,11 +14,29 @@ export default {
     ]
 };
 
-export const AuthForm = () => ({
+export const FormControlsAndFormGroups = () => ({
     template: `
         <app-stock-inventory></app-stock-inventory>
     `,
     // props: {
     //     header: text('header', 'Create Account'),
     // }
+});
+
+export const ComponetizingFormGroups = () => ({
+  template: `
+      <app-stock-inventory></app-stock-inventory>
+  `,
+});
+
+export const BindingFormControlsToSelect = () => ({
+  template: `
+      <app-stock-inventory></app-stock-inventory>
+  `,
+});
+
+export const FormGroupCollectionsWithFormArray = () => ({
+  template: `
+      <app-stock-inventory></app-stock-inventory>
+  `,
 });
