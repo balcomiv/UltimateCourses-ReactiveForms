@@ -7,7 +7,7 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['./stock-branch.component.scss']
 })
 export class StockBranchComponent implements OnInit {
-  @Input() parent: FormGroup;
+  @Input() parentForm: FormGroup;
 
   constructor() { }
 

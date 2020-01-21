@@ -2,13 +2,15 @@
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
     <app-stock-branch
-      [parent]="form">
+      [parentForm]="form">
     </app-stock-branch>
 
-    <app-stock-selector>
+    <app-stock-selector
+      [parentForm]="form">
     </app-stock-selector>
 
-    <app-stock-products>
+    <app-stock-products
+      [parentForm]="form">
     </app-stock-products>
 
     <div class="stock-inventory__buttons">
