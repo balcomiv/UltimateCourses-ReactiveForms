@@ -45,12 +45,22 @@ export class StockInventoryComponent implements OnInit {
       product_id: new FormControl(''),
       quantity: new FormControl(10)
     }),
-    stock: new FormArray([])
+    stock: new FormArray([
+      this.createStock({product_id: 1, quantity: 10}),
+      this.createStock({product_id: 2, quantity: 50})
+    ])
   });
 
   constructor() {}
 
   ngOnInit() {}
+
+  createStock(stock) {
+    return new FormGroup({
+      product_id: new FormControl(stock.product_id || ''),
+      quantity: new FormControl(stock.quantity || 10)
+    });
+  }
 
   onSubmit() {
     console.log('Submit:', this.form.value);

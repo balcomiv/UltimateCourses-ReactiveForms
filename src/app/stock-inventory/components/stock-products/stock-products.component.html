@@ -1,2 +1,33 @@
+
+<!-- Form Group -->
 <div class="stock-products" [formGroup]="parentForm">
+
+    <!-- Form Array -->
+    <div formArrayName="stock">
+
+        <!-- Iterating Over Form Groups in Form Array -->
+        <div *ngFor="let item of stocks; let i = index">
+
+            <!-- Form Group (of Stock Product) - Via Index of Form Array -->
+            <div class="stock-product__content" [formGroupName]="i">
+
+                <!-- Product Id -->
+                <div class="stock-product__name">
+                    {{ item.value.product_id }}
+                </div>
+
+                <!-- Product Qty -->
+                <input formControlName="quantity"
+                    type="number"
+                    step="10"
+                    min="10"
+                    max="10">
+
+                <!-- Btn Remove  -->
+                <button type="button">
+                    Remove
+                </button>
+            </div>
+        </div>
+    </div>
 </div>
