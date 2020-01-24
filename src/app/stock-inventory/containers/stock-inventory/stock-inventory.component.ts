@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormArray } from '@angular/forms';
 import { Product } from '../../models/product.interface';
+import { Stock } from '../../models/stock.interface';
 
 @Component({
   selector: 'app-stock-inventory',
@@ -41,13 +42,14 @@ export class StockInventoryComponent implements OnInit {
       branch: new FormControl(''),
       code: new FormControl('')
     }),
-    selector: new FormGroup({
-      product_id: new FormControl(''),
-      quantity: new FormControl(10)
-    }),
+    // selector: new FormGroup({
+    //   productId: new FormControl(''),
+    //   quantity: new FormControl(10)
+    // }),
+    selector: this.createStock(null),
     stock: new FormArray([
-      this.createStock({product_id: 1, quantity: 10}),
-      this.createStock({product_id: 2, quantity: 50})
+      this.createStock({productId: 1, quantity: 10}),
+      this.createStock({productId: 2, quantity: 50})
     ])
   });
 
@@ -55,10 +57,13 @@ export class StockInventoryComponent implements OnInit {
 
   ngOnInit() {}
 
-  createStock(stock) {
+  createStock(stock: Stock | null) {
+    const productId = (!stock) ? '' : stock.productId ? +stock.productId : '';
+    const quantity = (!stock) ? '' : stock.quantity ? +stock.quantity : '';
+
     return new FormGroup({
-      product_id: new FormControl(stock.product_id || ''),
-      quantity: new FormControl(stock.quantity || 10)
+      productId: new FormControl(productId),
+      quantity: new FormControl(quantity)
     });
   }
 

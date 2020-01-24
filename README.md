@@ -49,3 +49,9 @@ If you're a heavy visual studio user, you can simply open your preference settin
 "source.organizeImports": true
 }
 ....
+
+
+### Strict Checks
+https://codeburst.io/five-tips-i-wish-i-knew-when-i-started-with-typescript-c9e8609029db
+https://mariusschulz.com/blog/the-strict-compiler-option-in-typescript
+https://mariusschulz.com/blog/strict-property-initialization-in-typescript
