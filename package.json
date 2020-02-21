@@ -10,7 +10,8 @@
     "e2e": "ng e2e",
     "tslint-check": "tslint-config-prettier-check ./tslint.json",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "Karma-single-test-file": "ng test --include  **/*/app.component.spec.ts"
   },
   "private": true,
   "dependencies": {
